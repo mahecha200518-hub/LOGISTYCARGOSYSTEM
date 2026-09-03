@@ -11,6 +11,9 @@
    javascript/aplicacion.js (Alpine.data checklistCarga).
    ========================================================== */
 
+.checklist-conductor-progreso{margin-bottom:18px}
+.checklist-conductor-progreso-texto{font-size:11.5px;color:var(--taupe);margin-top:6px}
+
 .checklist-conductor-lista{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
 .checklist-conductor-item{background:var(--wood-d);border:1px solid var(--wood-l);border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:border-color .15s}
 .checklist-conductor-item:hover{border-color:var(--taupe)}

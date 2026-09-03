@@ -16,9 +16,9 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="card ad-asignaciones-bloque-5">
 <h3 class="ad-asignaciones-subtitulo-6">Asignación rápida</h3>
-<div class="ad-asignaciones-bloque-7"><label class="lbl">Servicio a asignar</label><select class="inp sel"><option>SRV-2026-00850 — Bogotá→Medellín</option><option>SRV-2026-00845 — Cali→Barranquilla</option></select></div>
-<div class="ad-asignaciones-bloque-7"><label class="lbl">Vehículo disponible</label><select class="inp sel"><option>Ford F-350 · ABC-123 · 2.5 ton</option><option>Kenworth T680 · XYZ-456 · 5 ton</option></select></div>
-<div class="ad-asignaciones-bloque-8"><label class="lbl">Conductor</label><select class="inp sel"><option>Carlos Mendoza · Disponible</option><option>Pedro Ruiz · Disponible</option></select></div>
+<div class="ad-asignaciones-bloque-7"><label class="lbl">Servicio a asignar</label><select @change="$store.app.toast_('Servicio a asignar: ' + $event.target.value)" class="inp sel"><option>SRV-2026-00850 — Bogotá→Medellín</option><option>SRV-2026-00845 — Cali→Barranquilla</option></select></div>
+<div class="ad-asignaciones-bloque-7"><label class="lbl">Vehículo disponible</label><select @change="$store.app.toast_('Vehículo disponible: ' + $event.target.value)" class="inp sel"><option>Ford F-350 · ABC-123 · 2.5 ton</option><option>Kenworth T680 · XYZ-456 · 5 ton</option></select></div>
+<div class="ad-asignaciones-bloque-8"><label class="lbl">Conductor</label><select @change="$store.app.toast_('Conductor: ' + $event.target.value)" class="inp sel"><option>Carlos Mendoza · Disponible</option><option>Pedro Ruiz · Disponible</option></select></div>
 <button @click="$store.app.toast_('Asignación guardada y conductor notificado')" class="btn btn-p ad-asignaciones-boton-9"><span class="material-symbols-outlined ad-asignaciones-texto-4">assignment_ind</span>Asignar ahora</button>
 </div>
 <div class="card ad-asignaciones-bloque-5">

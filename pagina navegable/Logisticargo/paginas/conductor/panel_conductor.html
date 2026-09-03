@@ -2,7 +2,8 @@
      CONDUCTOR - PANEL PRINCIPAL (MI RUTA)
 
      HTML de la pantalla principal del conductor: turno, parada
-     activa, cola de próximas paradas y accesos rápidos.
+     activa, progreso de ruta, cola de próximas paradas y
+     accesos rápidos.
 
      Estilos específicos: css/conductor/panel_conductor.css
      Estilos comunes de Conductor: css/conductor/conductor_comun.css
@@ -10,14 +11,28 @@
      ========================================================== -->
 <div class="conductor-pantalla" x-show="$store.app.page==='dash_conductor'">
 
-  <div class="conductor-header">
-    <p class="conductor-header-eyebrow">Hoy, 22 de mayo de 2026</p>
-    <h1 class="panel-conductor-titulo">Tienes 3 paradas hoy</h1>
+  <div class="conductor-header panel-conductor-encabezado">
+    <div>
+      <p class="conductor-header-eyebrow">Hoy, 22 de mayo de 2026</p>
+      <h1 class="panel-conductor-titulo">Tienes 3 paradas hoy</h1>
+    </div>
+    <div class="conductor-icono-insignia panel-conductor-insignia-camion"><span class="material-symbols-outlined">local_shipping</span></div>
+  </div>
+
+  <!-- Progreso de ruta -->
+  <div class="panel-conductor-progreso-ruta">
+    <div class="conductor-progreso-pista"><div class="conductor-progreso-relleno panel-conductor-progreso-valor"></div></div>
+    <div class="panel-conductor-progreso-paradas">
+      <div class="panel-conductor-progreso-parada panel-conductor-progreso-activa"><span class="material-symbols-outlined">radio_button_checked</span>Parada 1</div>
+      <div class="panel-conductor-progreso-parada"><span class="material-symbols-outlined">radio_button_unchecked</span>Parada 2</div>
+      <div class="panel-conductor-progreso-parada"><span class="material-symbols-outlined">radio_button_unchecked</span>Parada 3</div>
+    </div>
   </div>
 
   <!-- Parada activa -->
   <div class="panel-conductor-parada-activa">
     <div class="panel-conductor-textura"></div>
+    <span class="material-symbols-outlined panel-conductor-pin-decorativo">location_on</span>
     <p class="panel-conductor-eyebrow-clara">Parada actual · 1 de 3</p>
     <h2 class="panel-conductor-titulo-parada">Recoger en origen</h2>
     <p class="panel-conductor-direccion-clara">Calle 85 #15-32, Bogotá · SRV-2026-00847</p>

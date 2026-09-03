@@ -9,9 +9,12 @@
      ========================================================== -->
 <div class="conductor-pantalla" x-show="$store.app.page==='co_vehiculo'">
 
-  <div class="conductor-header">
-    <h1>Mi vehículo</h1>
-    <p>Ford F-350 · ABC-123 · Camión mediano</p>
+  <div class="conductor-header vehiculo-conductor-encabezado">
+    <div>
+      <h1>Mi vehículo</h1>
+      <p>Ford F-350 · Camión mediano</p>
+    </div>
+    <div class="vehiculo-conductor-placa conductor-mono">ABC-123</div>
   </div>
 
   <div class="conductor-card vehiculo-conductor-datos">
@@ -27,11 +30,14 @@
       <span class="conductor-fila-etiqueta">Próximo mantenimiento</span>
       <span class="conductor-fila-valor vehiculo-conductor-valor-alerta">En 1.200 km</span>
     </div>
+    <div class="vehiculo-conductor-gauge">
+      <div class="conductor-progreso-pista"><div class="conductor-progreso-relleno vehiculo-conductor-gauge-valor"></div></div>
+    </div>
   </div>
 
   <div class="vehiculo-conductor-acciones">
     <button class="conductor-accion" @click="$store.app.toast_('Inspección registrada')"><span class="material-symbols-outlined vehiculo-conductor-icono-sage">fact_check</span>Registrar inspección previa al turno</button>
-    <button class="conductor-accion" @click="$store.app.page='co_incidente'"><span class="material-symbols-outlined vehiculo-conductor-icono-rust">build</span>Reportar problema mecánico</button>
+    <button class="conductor-accion" @click="$store.app.page='co_mecanico'"><span class="material-symbols-outlined vehiculo-conductor-icono-rust">build</span>Reportar problema mecánico</button>
   </div>
 
 </div>

@@ -21,12 +21,12 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="card cl-soporte-bloque-6">
 <h3 class="cl-soporte-subtitulo-7">Abrir un caso de soporte</h3>
-<div class="cl-soporte-bloque-8"> <label class="lbl">Servicio relacionado</label> <select class="inp sel">
+<div class="cl-soporte-bloque-8"> <label class="lbl">Servicio relacionado</label> <select @change="$store.app.toast_('Servicio relacionado: ' + $event.target.value)" class="inp sel">
 <option>SRV-2026-00847 — Bogotá → Medellín</option>
 <option>SRV-2026-00848 — Bogotá → Cali</option>
 <option>No aplica a un servicio específico</option>
 </select> </div>
-<div class="cl-soporte-bloque-8"> <label class="lbl">Motivo</label> <select class="inp sel">
+<div class="cl-soporte-bloque-8"> <label class="lbl">Motivo</label> <select @change="$store.app.toast_('Motivo: ' + $event.target.value)" class="inp sel">
 <option>Retraso en el servicio</option>
 <option>Daño en algún objeto</option>
 <option>Cobro incorrecto</option>

@@ -12,13 +12,21 @@
 
   <a class="conductor-volver" @click.prevent="$store.app.page='dash_conductor'"><span class="material-symbols-outlined">arrow_back</span>Volver</a>
 
-  <div class="conductor-header">
-    <h1>Recoger en origen</h1>
-    <p>SRV-2026-00847 · Residencial</p>
+  <div class="conductor-header parada-conductor-encabezado">
+    <div>
+      <h1>Recoger en origen</h1>
+      <p>SRV-2026-00847 · Residencial</p>
+    </div>
+    <div class="parada-conductor-stepper">
+      <span class="parada-conductor-paso parada-conductor-paso-activo"></span>
+      <span class="parada-conductor-paso"></span>
+      <span class="parada-conductor-paso"></span>
+    </div>
   </div>
 
   <!-- Dirección -->
-  <div class="conductor-card parada-conductor-bloque">
+  <div class="conductor-card parada-conductor-bloque parada-conductor-direccion-card">
+    <span class="material-symbols-outlined parada-conductor-pin-decorativo">location_on</span>
     <p class="conductor-eyebrow">Dirección</p>
     <p class="parada-conductor-direccion">Calle 85 #15-32, Bogotá</p>
     <p class="parada-conductor-detalle">Apartamento 502, Torre B · Portería: pedir a "mudanza García"</p>
@@ -43,7 +51,7 @@
   <!-- Acciones -->
   <div class="parada-conductor-acciones">
     <button class="conductor-btn-primario parada-conductor-btn-checklist" @click="$store.app.page='co_checklist'"><span class="material-symbols-outlined">checklist</span>Iniciar checklist de carga</button>
-    <button class="conductor-btn-secundario" @click="$store.app.toast_('Abriendo GPS hacia el destino')"><span class="material-symbols-outlined">navigation</span>Abrir navegación GPS</button>
+    <button class="conductor-btn-secundario" @click="$store.app.page='co_gps'"><span class="material-symbols-outlined">navigation</span>Abrir navegación GPS</button>
   </div>
 
 </div>

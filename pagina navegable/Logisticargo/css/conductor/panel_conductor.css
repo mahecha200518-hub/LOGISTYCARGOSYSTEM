@@ -13,9 +13,23 @@
 
 .panel-conductor-titulo{font-family:'Fraunces',serif;font-size:21px;font-weight:700;color:var(--paper);margin:0}
 
+/* ── Encabezado con insignia de camión ── */
+.panel-conductor-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.panel-conductor-insignia-camion{background:var(--terra-l);color:var(--terra);flex-shrink:0}
+
+/* ── Progreso de la ruta (pista + paradas) ── */
+.panel-conductor-progreso-ruta{margin:14px 0 18px}
+.panel-conductor-progreso-valor{width:12%}
+.panel-conductor-progreso-paradas{display:flex;justify-content:space-between;margin-top:8px}
+.panel-conductor-progreso-parada{display:flex;align-items:center;gap:4px;font-size:10.5px;color:var(--taupe)}
+.panel-conductor-progreso-parada .material-symbols-outlined{font-size:14px}
+.panel-conductor-progreso-activa{color:var(--terra);font-weight:700}
+.panel-conductor-progreso-activa .material-symbols-outlined{color:var(--terra)}
+
 /* ── Tarjeta destacada de la parada activa ── */
 .panel-conductor-parada-activa{background:var(--terra);border-radius:18px;padding:20px;margin-bottom:16px;position:relative;overflow:hidden}
 .panel-conductor-textura{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,#FFFFFF0A 1px,transparent 0);background-size:16px 16px;pointer-events:none}
+.panel-conductor-pin-decorativo{position:absolute;right:14px;top:14px;font-size:64px;color:#FFFFFF14}
 .panel-conductor-eyebrow-clara{font-size:11px;color:#FFE8D8;text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px;position:relative}
 .panel-conductor-titulo-parada{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--paper);margin-bottom:4px;position:relative}
 .panel-conductor-direccion-clara{font-size:13px;color:#FFE8D8;margin-bottom:14px;position:relative}
@@ -25,9 +39,9 @@
 .panel-conductor-btn-llamar{background:#2C1A0E44;color:#FFFFFF;padding:14px;border-radius:12px;cursor:pointer;border:none;display:flex;align-items:center;transition:background .15s}
 .panel-conductor-btn-llamar:hover{background:#2C1A0E66}
 
-/* ── Cola de próximas paradas ── */
-.panel-conductor-cola{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.panel-conductor-item-cola{background:var(--wood-d);border:1px solid var(--wood-l);border-radius:14px;padding:16px;display:flex;align-items:center;gap:12px}
+/* ── Cola de próximas paradas (línea de tiempo decorativa) ── */
+.panel-conductor-cola{margin-bottom:20px}
+.panel-conductor-item-cola{background:var(--wood-d);border:1px solid var(--wood-l);border-radius:14px;padding:16px;display:flex;align-items:center;gap:12px;position:relative;margin-bottom:10px}
 .panel-conductor-item-siguiente{opacity:.85}
 .panel-conductor-item-futura{opacity:.55}
 .panel-conductor-circulo{background:var(--wood-l);color:var(--taupe)}

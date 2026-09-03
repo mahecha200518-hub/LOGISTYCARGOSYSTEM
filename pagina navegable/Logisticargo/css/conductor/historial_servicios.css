@@ -11,7 +11,12 @@
    css/componentes/tarjetas.css y no se repiten aquí.
    ========================================================== */
 
-.historial-conductor-lista{display:flex;flex-direction:column;gap:10px}
+.historial-conductor-lista{display:flex;flex-direction:column;gap:14px}
+.historial-conductor-fila{position:relative}
+.historial-conductor-fila .conductor-linea-punto{left:-27px;top:18px}
+.historial-conductor-punto-ok{background:var(--sage-l);border-color:var(--sage);color:var(--sage)}
+.historial-conductor-punto-alerta{background:var(--ocre-l);border-color:var(--ocre);color:var(--ocre)}
+
 .historial-conductor-fila-superior{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .historial-conductor-codigo{font-size:13px;font-weight:600;color:var(--paper);margin:0}
 .historial-conductor-detalle{font-size:12px;color:var(--taupe);margin:0}

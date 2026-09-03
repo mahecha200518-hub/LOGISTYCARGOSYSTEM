@@ -65,6 +65,8 @@ const RUTAS_DE_PAGINAS = {
   co_incidente: 'paginas/conductor/reportar_novedad.html',
   co_vehiculo: 'paginas/conductor/mi_vehiculo.html',
   co_historial: 'paginas/conductor/historial_servicios.html',
+  co_gps: 'paginas/conductor/gps_navegacion.html',
+  co_mecanico: 'paginas/conductor/reportar_problema_mecanico.html',
 
   // 'welcome' no tiene ruta: es la pantalla de carga y vive
   // directamente en index.html (no se recarga desde un archivo).
@@ -112,6 +114,8 @@ const CSS_DE_PAGINAS = {
   co_incidente: 'css/conductor/reportar_novedad.css',
   co_vehiculo: 'css/conductor/mi_vehiculo.css',
   co_historial: 'css/conductor/historial_servicios.css',
+  co_gps: 'css/conductor/gps_navegacion.css',
+  co_mecanico: 'css/conductor/reportar_problema_mecanico.css',
 
   // 'welcome' no tiene CSS propio: usa solo el CSS global/estructura.
 };
@@ -174,6 +178,8 @@ const CONTENEDOR_DE_PAGINA = {
   co_incidente: 'contenido-conductor',
   co_vehiculo: 'contenido-conductor',
   co_historial: 'contenido-conductor',
+  co_gps: 'contenido-conductor',
+  co_mecanico: 'contenido-conductor',
 };
 
 // Guarda en memoria los archivos ya descargados, para no

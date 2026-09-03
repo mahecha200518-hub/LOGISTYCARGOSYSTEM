@@ -172,7 +172,7 @@
 <h3 class="ad-panel-subtitulo-50">
       Mapa de operación en tiempo real
     </h3>
-<select class="inp sel ad-panel-select-59">
+<select @change="$store.app.toast_('Filtrando mapa: ' + $event.target.value)" class="inp sel ad-panel-select-59">
 <option>Todos los servicios</option>
 <option>En ruta</option>
 <option>Completados</option>

@@ -19,7 +19,7 @@
 <div class="cl-historial-bloque-4">
 <div class="cl-historial-bloque-5">
 <div class="cl-historial-bloque-6"><span class="material-symbols-outlined cl-historial-texto-7">search</span><input class="inp cl-historial-campo-8" placeholder="Buscar servicio..."/></div>
-<select class="inp sel cl-historial-select-9"><option>Todos los estados</option><option>En camino</option><option>Confirmada</option><option>Completada</option><option>Cancelada</option></select>
+<select @change="$store.app.toast_('Filtrando por estado: ' + $event.target.value)" class="inp sel cl-historial-select-9"><option>Todos los estados</option><option>En camino</option><option>Confirmada</option><option>Completada</option><option>Cancelada</option></select>
 </div>
 <div class="card cl-historial-bloque-10">
 <table class="cl-historial-tabla-11">

@@ -22,6 +22,12 @@
     <p>El cliente puede ver tu progreso en su seguimiento.</p>
   </div>
 
+  <!-- Progreso (calculado en vivo a partir de items, sin nuevo estado) -->
+  <div class="checklist-conductor-progreso">
+    <div class="conductor-progreso-pista"><div class="conductor-progreso-relleno" :style="'width:'+Math.round(items.filter(i=>i.done).length/items.length*100)+'%'"></div></div>
+    <p class="checklist-conductor-progreso-texto"><span x-text="items.filter(i=>i.done).length"></span> de <span x-text="items.length"></span> completados</p>
+  </div>
+
   <div class="checklist-conductor-lista">
     <template x-for="(it,i) in items" :key="i">
       <div class="checklist-conductor-item" @click="it.done=!it.done">

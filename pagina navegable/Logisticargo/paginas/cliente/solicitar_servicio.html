@@ -38,7 +38,7 @@
 </div>
 <div class="cl-solicitud-bloque-17"><label class="lbl">Piso / Apartamento</label><input class="inp" placeholder="Piso 5, Apto 502"/></div>
 <div><label class="lbl">Tipo de propiedad</label>
-<select class="inp sel">
+<select @change="$store.app.toast_('Tipo de propiedad: ' + $event.target.value)" class="inp sel">
 <option>Apartamento</option>
 <option>Casa</option>
 <option>Oficina</option>
@@ -57,7 +57,7 @@
 </div>
 <div class="cl-solicitud-bloque-17"><label class="lbl">Piso / Apartamento</label><input class="inp" placeholder="Opcional"/></div>
 <div><label class="lbl">Tipo de propiedad</label>
-<select class="inp sel">
+<select @change="$store.app.toast_('Tipo de propiedad: ' + $event.target.value)" class="inp sel">
 <option>Apartamento</option>
 <option>Casa</option>
 <option>Oficina</option>
@@ -97,7 +97,7 @@
 <h3 class="cl-solicitud-subtitulo-30">Fecha deseada de mudanza</h3>
 <div class="grid grid-cols-2 gap-4">
 <div><label class="lbl">Fecha</label><input class="inp" placeholder="dd/mm/aaaa" type="text"/></div>
-<div><label class="lbl">Horario preferido</label><select class="inp sel">
+<div><label class="lbl">Horario preferido</label><select @change="$store.app.toast_('Horario preferido: ' + $event.target.value)" class="inp sel">
 <option>Mañana (7AM–12PM)</option>
 <option>Tarde (12PM–6PM)</option>
 <option>Flexible</option>

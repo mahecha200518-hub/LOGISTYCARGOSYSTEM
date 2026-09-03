@@ -12,6 +12,9 @@
    tema oscuro de Conductor.
    ========================================================== */
 
+.novedad-conductor-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.novedad-conductor-insignia{background:var(--ocre-l);color:var(--ocre);flex-shrink:0}
+
 .novedad-conductor-campo{margin-bottom:12px}
 .novedad-conductor-campo-descripcion{margin-bottom:18px}
 .novedad-conductor-etiqueta{color:var(--taupe)}

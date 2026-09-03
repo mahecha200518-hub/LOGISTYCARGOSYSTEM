@@ -9,6 +9,14 @@
    de parada (paginas/conductor/parada_actual.html).
    ========================================================== */
 
+.parada-conductor-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.parada-conductor-stepper{display:flex;gap:5px;margin-top:6px}
+.parada-conductor-paso{width:20px;height:5px;border-radius:3px;background:var(--wood-l)}
+.parada-conductor-paso-activo{background:var(--terra);width:26px}
+
+.parada-conductor-direccion-card{position:relative;overflow:hidden}
+.parada-conductor-pin-decorativo{position:absolute;right:10px;top:10px;font-size:44px;color:#5C3D2044}
+
 .parada-conductor-bloque{margin-bottom:12px}
 .parada-conductor-direccion{font-size:15px;color:var(--paper);font-weight:700;margin:0 0 3px}
 .parada-conductor-detalle{font-size:12px;color:var(--taupe);margin:0}

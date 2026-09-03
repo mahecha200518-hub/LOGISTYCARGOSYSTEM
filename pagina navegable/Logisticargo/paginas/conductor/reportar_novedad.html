@@ -10,38 +10,34 @@
      Funcionalidad: javascript/aplicacion.js, javascript/enrutador.js
      ========================================================== -->
 <div class="conductor-pantalla" x-show="$store.app.page==='co_incidente'">
-
-  <a class="conductor-volver" @click.prevent="$store.app.page='dash_conductor'"><span class="material-symbols-outlined">arrow_back</span>Volver</a>
-
-  <div class="conductor-header">
-    <h1>Reportar novedad</h1>
-    <p>Llega de inmediato al panel de la oficina.</p>
-  </div>
-
-  <div class="novedad-conductor-campo">
-    <label class="lbl novedad-conductor-etiqueta">Tipo de novedad</label>
-    <select class="inp sel novedad-conductor-input">
-      <option>Retraso (tráfico, clima)</option>
-      <option>Daño a un objeto</option>
-      <option>Problema mecánico</option>
-      <option>Cliente no se encuentra</option>
-      <option>Otro</option>
-    </select>
-  </div>
-
-  <div class="novedad-conductor-campo">
-    <label class="lbl novedad-conductor-etiqueta">Parada relacionada</label>
-    <select class="inp sel novedad-conductor-input">
-      <option>Parada 1 — SRV-2026-00847</option>
-      <option>Parada 2 — SRV-2026-00847</option>
-    </select>
-  </div>
-
-  <div class="novedad-conductor-campo novedad-conductor-campo-descripcion">
-    <label class="lbl novedad-conductor-etiqueta">Describe lo que pasó</label>
-    <textarea class="inp novedad-conductor-input" rows="4" placeholder="Ej: Tráfico pesado, llegaré 25 min tarde"></textarea>
-  </div>
-
-  <button class="conductor-btn-primario novedad-conductor-btn-enviar" @click="$store.app.page='dash_conductor';$store.app.toast_('Novedad reportada a la oficina')"><span class="material-symbols-outlined">send</span>Enviar reporte</button>
-
+<a @click.prevent="$store.app.page='dash_conductor'" class="conductor-volver"><span class="material-symbols-outlined">arrow_back</span>Volver</a>
+<div class="conductor-header novedad-conductor-encabezado">
+<div>
+<h1>Reportar novedad</h1>
+<p>Llega de inmediato al panel de la oficina.</p>
+</div>
+<div class="conductor-icono-insignia novedad-conductor-insignia"><span class="material-symbols-outlined">report</span></div>
+</div>
+<div class="novedad-conductor-campo">
+<label class="lbl novedad-conductor-etiqueta">Tipo de novedad</label>
+<select @change="$store.app.toast_('Tipo de novedad: ' + $event.target.value)" class="inp sel novedad-conductor-input">
+<option>Retraso (tráfico, clima)</option>
+<option>Daño a un objeto</option>
+<option>Problema mecánico</option>
+<option>Cliente no se encuentra</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="novedad-conductor-campo">
+<label class="lbl novedad-conductor-etiqueta">Parada relacionada</label>
+<select @change="$store.app.toast_('Parada relacionada: ' + $event.target.value)" class="inp sel novedad-conductor-input">
+<option>Parada 1 — SRV-2026-00847</option>
+<option>Parada 2 — SRV-2026-00847</option>
+</select>
+</div>
+<div class="novedad-conductor-campo novedad-conductor-campo-descripcion">
+<label class="lbl novedad-conductor-etiqueta">Describe lo que pasó</label>
+<textarea class="inp novedad-conductor-input" placeholder="Ej: Tráfico pesado, llegaré 25 min tarde" rows="4"></textarea>
+</div>
+<button @click="$store.app.page='dash_conductor';$store.app.toast_('Novedad reportada a la oficina')" class="conductor-btn-primario novedad-conductor-btn-enviar"><span class="material-symbols-outlined">send</span>Enviar reporte</button>
 </div>

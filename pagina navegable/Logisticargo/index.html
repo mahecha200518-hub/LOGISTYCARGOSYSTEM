@@ -30,7 +30,7 @@
 <title>Logisty Cargo — Sistema de Gestión</title>
 
 <!-- Fuentes e iconografía -->
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
 <!-- Tailwind (utilidades de layout: flex, grid, gap, p-*, etc. -->
@@ -137,9 +137,26 @@
 </nav>
 <!-- Derecha -->
 <div class="shell-bloque-21">
-<div @click="$store.app.toast_('Tienes 3 notificaciones pendientes')" class="shell-bloque-22">
+<div @click.outside="notifOpen=false" class="shell-bloque-22-envoltorio" x-data="{ notifOpen:false }">
+<div @click="notifOpen=!notifOpen" class="shell-bloque-22">
 <span class="material-symbols-outlined shell-texto-23">notifications</span>
 <span class="shell-texto-24">3</span>
+</div>
+<div class="shell-notif-panel" x-show="notifOpen" x-transition x-cloak>
+<p class="shell-notif-panel-titulo">Notificaciones</p>
+<div class="shell-notif-item">
+<span class="material-symbols-outlined shell-notif-item-icono shell-notif-icono-terra">local_shipping</span>
+<div><p class="shell-notif-item-texto">Nuevo servicio asignado: SRV-2026-00852</p><p class="shell-notif-item-hora">Hace 5 min</p></div>
+</div>
+<div class="shell-notif-item">
+<span class="material-symbols-outlined shell-notif-item-icono shell-notif-icono-sage">task_alt</span>
+<div><p class="shell-notif-item-texto">Carlos Mendoza completó una parada</p><p class="shell-notif-item-hora">Hace 22 min</p></div>
+</div>
+<div class="shell-notif-item">
+<span class="material-symbols-outlined shell-notif-item-icono shell-notif-icono-ocre">build</span>
+<div><p class="shell-notif-item-texto">Vehículo ABC-123 requiere mantenimiento pronto</p><p class="shell-notif-item-hora">Hace 1 h</p></div>
+</div>
+</div>
 </div>
 <div @click="$store.app.page='login';$store.app.role=''" class="shell-bloque-25">
 <div class="shell-bloque-26">LR</div>
@@ -193,9 +210,18 @@
 </a>
 </nav>
 <div class="shell-bloque-21">
-<div @click="$store.app.toast_('Sin notificaciones nuevas')" class="shell-bloque-22">
+<div @click.outside="notifOpen=false" class="shell-bloque-22-envoltorio" x-data="{ notifOpen:false }">
+<div @click="notifOpen=!notifOpen" class="shell-bloque-22">
 <span class="material-symbols-outlined shell-texto-23">notifications</span>
 <span class="shell-texto-34"></span>
+</div>
+<div class="shell-notif-panel" x-show="notifOpen" x-transition x-cloak>
+<p class="shell-notif-panel-titulo">Notificaciones</p>
+<div class="shell-notif-vacio">
+<span class="material-symbols-outlined">notifications_off</span>
+<p>No tienes notificaciones nuevas</p>
+</div>
+</div>
 </div>
 <div @click="$store.app.page='login';$store.app.role=''" class="shell-bloque-25">
 <div class="shell-bloque-26" x-text="$store.app.userName.split(' ').map(n=&gt;n[0]).join('').slice(0,2)"></div>
@@ -210,7 +236,7 @@
 <div class="contents" id="contenido-cliente"></div>
 </div>
 <!-- ZONA DEL CONDUCTOR -->
-<div class="min-h-screen flex flex-col shell-bloque-35" x-cloak x-show="['dash_conductor','co_parada','co_checklist','co_incidente','co_vehiculo','co_historial'].includes($store.app.page)">
+<div class="min-h-screen flex flex-col shell-bloque-35" x-cloak x-show="['dash_conductor','co_parada','co_checklist','co_incidente','co_vehiculo','co_historial','co_gps','co_mecanico'].includes($store.app.page)">
 <!-- Barra conductor -->
 <div class="shell-bloque-36">
 <div class="shell-bloque-37">

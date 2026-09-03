@@ -61,10 +61,10 @@
 <span class="material-symbols-outlined ad-servicios-texto-18">search</span>
 <input class="inp ad-servicios-campo-19" placeholder="Buscar por código, cliente o ruta..."/>
 </div>
-<select class="inp sel ad-servicios-select-20"><option>Todos los estados</option><option>Pendiente</option><option>En curso</option><option>Completado</option><option>Cancelado</option></select>
-<select class="inp sel ad-servicios-select-21"><option>Todas las rutas</option><option>Bogotá → Medellín</option><option>Bogotá → Cali</option></select>
-<select class="inp sel ad-servicios-select-21"><option>Rango de fechas</option></select>
-<button class="btn btn-s"><span class="material-symbols-outlined ad-servicios-texto-22">filter_list</span>Filtros</button>
+<select @change="$store.app.toast_('Filtrando por estado: ' + $event.target.value)" class="inp sel ad-servicios-select-20"><option>Todos los estados</option><option>Pendiente</option><option>En curso</option><option>Completado</option><option>Cancelado</option></select>
+<select @change="$store.app.toast_('Filtrando por ruta: ' + $event.target.value)" class="inp sel ad-servicios-select-21"><option>Todas las rutas</option><option>Bogotá → Medellín</option><option>Bogotá → Cali</option></select>
+<select @change="$store.app.toast_('Filtrando por fecha: ' + $event.target.value)" class="inp sel ad-servicios-select-21"><option>Rango de fechas</option></select>
+<button @click="$store.app.toast_('Filtros aplicados')" class="btn btn-s"><span class="material-symbols-outlined ad-servicios-texto-22">filter_list</span>Filtros</button>
 </div>
 <!-- Tabla -->
 <div class="card ad-servicios-bloque-23">
@@ -222,17 +222,17 @@
 <div class="ad-servicios-bloque-50">
 <p class="ad-servicios-texto-47">Mostrando 1 a 5 de 32 servicios</p>
 <div class="ad-servicios-bloque-34">
-<button class="btn btn-s ad-servicios-boton-51">←</button>
-<button class="btn btn-p ad-servicios-boton-52">1</button>
-<button class="btn btn-s ad-servicios-boton-52">2</button>
-<button class="btn btn-s ad-servicios-boton-52">3</button>
-<button class="btn btn-s ad-servicios-boton-51">...</button>
-<button class="btn btn-s ad-servicios-boton-52">7</button>
-<button class="btn btn-s ad-servicios-boton-51">→</button>
+<button @click="$store.app.toast_('Página anterior')" class="btn btn-s ad-servicios-boton-51">←</button>
+<button @click="$store.app.toast_('Página 1')" class="btn btn-p ad-servicios-boton-52">1</button>
+<button @click="$store.app.toast_('Página 2')" class="btn btn-s ad-servicios-boton-52">2</button>
+<button @click="$store.app.toast_('Página 3')" class="btn btn-s ad-servicios-boton-52">3</button>
+<button @click="$store.app.toast_('Más páginas')" class="btn btn-s ad-servicios-boton-51">...</button>
+<button @click="$store.app.toast_('Página 7')" class="btn btn-s ad-servicios-boton-52">7</button>
+<button @click="$store.app.toast_('Página siguiente')" class="btn btn-s ad-servicios-boton-51">→</button>
 </div>
 <div class="ad-servicios-bloque-31">
 <span class="ad-servicios-texto-47">Mostrar</span>
-<select class="inp sel ad-servicios-select-53"><option>5</option><option>10</option><option>25</option></select>
+<select @change="$store.app.toast_('Mostrando ' + $event.target.value + ' por página')" class="inp sel ad-servicios-select-53"><option>5</option><option>10</option><option>25</option></select>
 <span class="ad-servicios-texto-47">por página</span>
 </div>
 </div>

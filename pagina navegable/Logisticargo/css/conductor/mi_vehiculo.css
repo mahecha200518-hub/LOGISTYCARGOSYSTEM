@@ -9,8 +9,13 @@
    pantalla de vehículo (paginas/conductor/mi_vehiculo.html).
    ========================================================== */
 
+.vehiculo-conductor-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.vehiculo-conductor-placa{background:var(--paper);color:var(--wood);border:2px solid var(--wood-l);border-radius:6px;padding:6px 10px;font-size:13px;font-weight:700;flex-shrink:0;letter-spacing:.05em}
+
 .vehiculo-conductor-datos{margin-bottom:14px}
 .vehiculo-conductor-valor-alerta{color:var(--ocre)}
+.vehiculo-conductor-gauge{margin-top:12px}
+.vehiculo-conductor-gauge-valor{width:82%;background:var(--ocre)}
 
 .vehiculo-conductor-acciones{display:flex;flex-direction:column;gap:10px}
 .vehiculo-conductor-icono-sage{color:var(--sage)}

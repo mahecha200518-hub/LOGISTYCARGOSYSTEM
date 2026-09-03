@@ -17,6 +17,8 @@
      css/conductor/reportar_novedad.css
      css/conductor/mi_vehiculo.css
      css/conductor/historial_servicios.css
+     css/conductor/gps_navegacion.css
+     css/conductor/reportar_problema_mecanico.css
 
    Se carga siempre desde index.html junto al resto de
    css/componentes/*.css.
@@ -26,9 +28,13 @@
 .conductor-pantalla{padding:18px;max-width:560px;margin:0 auto;width:100%}
 
 /* ── Enlace "Volver" ── */
-.conductor-volver{display:flex;align-items:center;gap:6px;color:var(--taupe);font-size:12px;margin-bottom:16px;cursor:pointer;transition:color .15s}
-.conductor-volver:hover{color:var(--paper)}
-.conductor-volver .material-symbols-outlined{font-size:16px}
+/* ── Botón "Volver" (chip con ícono circular, no un simple
+   enlace de texto) ── */
+.conductor-volver{display:inline-flex;align-items:center;gap:8px;background:var(--wood-d);border:1px solid var(--wood-l);color:var(--taupe);font-size:12.5px;font-weight:600;padding:6px 16px 6px 6px;border-radius:30px;margin-bottom:18px;cursor:pointer;transition:border-color .15s,color .15s,transform .1s}
+.conductor-volver:hover{border-color:var(--terra);color:var(--paper)}
+.conductor-volver:active{transform:scale(.97)}
+.conductor-volver .material-symbols-outlined{font-size:16px;width:26px;height:26px;border-radius:50%;background:var(--wood-l);display:flex;align-items:center;justify-content:center;color:var(--paper);transition:background .15s}
+.conductor-volver:hover .material-symbols-outlined{background:var(--terra)}
 
 /* ── Encabezado de pantalla (título + subtítulo) ── */
 .conductor-header{margin-bottom:18px}
@@ -67,3 +73,31 @@
 
 /* ── Título de sección pequeño en mayúsculas (ej. "Siguientes paradas") ── */
 .conductor-seccion-titulo{font-size:11px;color:var(--taupe);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:10px}
+
+/* ── Texto tipo "código" (números de servicio, placas) en
+   monoespaciada: un guiño tipográfico al mundo operativo/logístico,
+   igual que en una guía de carga o una placa vehicular. ── */
+.conductor-mono{font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
+
+/* ── Línea de ruta punteada (motivo decorativo de "carretera"),
+   usada como separador entre secciones en vez de una simple
+   línea sólida. ── */
+.conductor-separador-ruta{height:0;border-top:2px dashed var(--wood-l);margin:18px 0;position:relative}
+.conductor-separador-ruta::before,.conductor-separador-ruta::after{content:'';position:absolute;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--wood-l)}
+.conductor-separador-ruta::before{left:0}
+.conductor-separador-ruta::after{right:0}
+
+/* ── Insignia circular con icono (decorativa, usada como encabezado
+   de sección o remate visual en varias pantallas) ── */
+.conductor-icono-insignia{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.conductor-icono-insignia .material-symbols-outlined{font-size:26px}
+
+/* ── Barra de progreso (checklist, mantenimiento, avance de ruta) ── */
+.conductor-progreso-pista{background:var(--wood-l);border-radius:20px;height:6px;overflow:hidden}
+.conductor-progreso-relleno{background:var(--terra);height:100%;border-radius:20px;transition:width .4s ease}
+
+/* ── Línea de tiempo (historial, secuencia de paradas) ── */
+.conductor-linea-tiempo{position:relative;padding-left:28px}
+.conductor-linea-tiempo::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--wood-l)}
+.conductor-linea-punto{position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--wood-d);border:2px solid var(--wood-l);display:flex;align-items:center;justify-content:center}
+.conductor-linea-punto .material-symbols-outlined{font-size:11px}
