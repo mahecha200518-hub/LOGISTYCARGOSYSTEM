@@ -1,0 +1,47 @@
+<!-- ==========================================================
+     CONDUCTOR - REPORTAR PROBLEMA MECÁNICO
+
+     Formulario específico para reportar una falla del vehículo,
+     separado de la novedad general de servicio. Se abre desde
+     el botón "Reportar problema mecánico" en
+     paginas/conductor/mi_vehiculo.html.
+
+     Estilos específicos: css/conductor/reportar_problema_mecanico.css
+     Estilos comunes de Conductor: css/conductor/conductor_comun.css
+     Componentes reutilizados: css/componentes/formularios.css (.inp, .sel, .lbl)
+     Funcionalidad: javascript/aplicacion.js, javascript/enrutador.js
+     ========================================================== -->
+<div class="conductor-pantalla" x-show="$store.app.page==='co_mecanico'">
+<a @click.prevent="$store.app.page='co_vehiculo'" class="conductor-volver"><span class="material-symbols-outlined">arrow_back</span>Volver a mi vehículo</a>
+<div class="conductor-header mecanico-conductor-encabezado">
+<div>
+<h1>Reportar problema mecánico</h1>
+<p>Ford F-350 · ABC-123</p>
+</div>
+<div class="conductor-icono-insignia mecanico-conductor-insignia"><span class="material-symbols-outlined">build</span></div>
+</div>
+<div class="mecanico-conductor-campo">
+<label class="lbl mecanico-conductor-etiqueta">Sistema afectado</label>
+<select @change="$store.app.toast_('Sistema afectado: ' + $event.target.value)" class="inp sel mecanico-conductor-input">
+<option>Motor</option>
+<option>Frenos</option>
+<option>Llantas / suspensión</option>
+<option>Sistema eléctrico</option>
+<option>Carrocería / puertas</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="mecanico-conductor-campo">
+<label class="lbl mecanico-conductor-etiqueta">Gravedad</label>
+<div class="mecanico-conductor-gravedad" x-data="{ g: 'moderada' }">
+<button :class="g==='leve' &amp;&amp; 'mecanico-conductor-chip-activo-sage'" @click="g='leve'" class="mecanico-conductor-chip" type="button">Leve</button>
+<button :class="g==='moderada' &amp;&amp; 'mecanico-conductor-chip-activo-ocre'" @click="g='moderada'" class="mecanico-conductor-chip" type="button">Moderada</button>
+<button :class="g==='grave' &amp;&amp; 'mecanico-conductor-chip-activo-rust'" @click="g='grave'" class="mecanico-conductor-chip" type="button">Grave · no puedo continuar</button>
+</div>
+</div>
+<div class="mecanico-conductor-campo mecanico-conductor-campo-descripcion">
+<label class="lbl mecanico-conductor-etiqueta">Describe la falla</label>
+<textarea class="inp mecanico-conductor-input" placeholder="Ej: Ruido metálico al frenar, viene desde ayer" rows="4"></textarea>
+</div>
+<button @click="$store.app.page='co_vehiculo';$store.app.toast_('Problema mecánico reportado al taller')" class="conductor-btn-primario mecanico-conductor-btn-enviar"><span class="material-symbols-outlined">send</span>Enviar reporte al taller</button>
+</div>

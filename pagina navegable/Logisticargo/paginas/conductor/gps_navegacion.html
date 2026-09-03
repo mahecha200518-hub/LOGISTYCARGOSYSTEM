@@ -1,0 +1,61 @@
+<!-- ==========================================================
+     CONDUCTOR - NAVEGACIÓN GPS
+
+     Pantalla de navegación hacia la parada actual. Se abre desde
+     el botón "Abrir navegación GPS" en paginas/conductor/parada_actual.html.
+     Reutiliza la misma imagen de mapa que ya usa el seguimiento
+     de Cliente (imagenes/mapa.jpg), para mantener coherencia
+     visual entre roles.
+
+     Estilos específicos: css/conductor/gps_navegacion.css
+     Estilos comunes de Conductor: css/conductor/conductor_comun.css
+     Funcionalidad: javascript/aplicacion.js, javascript/enrutador.js
+     ========================================================== -->
+<div class="conductor-pantalla gps-conductor-pantalla" x-show="$store.app.page==='co_gps'">
+
+  <a class="conductor-volver" @click.prevent="$store.app.page='co_parada'"><span class="material-symbols-outlined">arrow_back</span>Volver a la parada</a>
+
+  <!-- Mapa -->
+  <div class="gps-conductor-mapa">
+    <img alt="Ruta hacia la parada actual" class="gps-conductor-mapa-imagen" src="imagenes/mapa.jpg"/>
+    <div class="gps-conductor-mapa-degradado"></div>
+    <div class="gps-conductor-chip-eta">
+      <span class="material-symbols-outlined">schedule</span>
+      <div>
+        <p class="gps-conductor-chip-valor">12 min</p>
+        <p class="gps-conductor-chip-etiqueta">4.8 km restantes</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instrucción actual -->
+  <div class="gps-conductor-instruccion">
+    <span class="material-symbols-outlined gps-conductor-instruccion-icono">turn_right</span>
+    <div>
+      <p class="gps-conductor-instruccion-texto">Gira a la derecha en Carrera 15</p>
+      <p class="gps-conductor-instruccion-detalle">En 300 m · luego continúa 1.2 km</p>
+    </div>
+  </div>
+
+  <!-- Destino -->
+  <div class="conductor-card gps-conductor-destino">
+    <div class="gps-conductor-destino-fila">
+      <span class="material-symbols-outlined gps-conductor-pin">location_on</span>
+      <div>
+        <p class="conductor-eyebrow">Destino · SRV-2026-00847</p>
+        <p class="gps-conductor-destino-direccion">Calle 85 #15-32, Bogotá</p>
+      </div>
+    </div>
+    <div class="conductor-separador-ruta"></div>
+    <div class="conductor-fila">
+      <span class="conductor-fila-etiqueta">Cliente</span>
+      <span class="conductor-fila-valor">Ana García</span>
+    </div>
+  </div>
+
+  <div class="gps-conductor-acciones">
+    <button class="conductor-btn-secundario" @click="$store.app.contactModal=true"><span class="material-symbols-outlined">call</span>Llamar al cliente</button>
+    <button class="conductor-btn-primario gps-conductor-btn-llegue" @click="$store.app.page='co_parada';$store.app.toast_('Marcado como llegada al destino')"><span class="material-symbols-outlined">flag</span>He llegado</button>
+  </div>
+
+</div>

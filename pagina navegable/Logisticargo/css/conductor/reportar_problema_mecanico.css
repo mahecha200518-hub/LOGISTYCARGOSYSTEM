@@ -1,0 +1,29 @@
+/* ==========================================================
+   LOGISTICARGO SYSTEM
+   CONDUCTOR - REPORTAR PROBLEMA MECÁNICO
+
+   Archivo:
+   css/conductor/reportar_problema_mecanico.css
+
+   Contiene únicamente los estilos visuales propios del reporte
+   de falla mecánica (paginas/conductor/reportar_problema_mecanico.html).
+   Reutiliza .inp / .sel / .lbl de css/componentes/formularios.css.
+   ========================================================== */
+
+.mecanico-conductor-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.mecanico-conductor-insignia{background:#A8423022;color:var(--rust);flex-shrink:0}
+
+.mecanico-conductor-campo{margin-bottom:14px}
+.mecanico-conductor-campo-descripcion{margin-bottom:18px}
+.mecanico-conductor-etiqueta{color:var(--taupe)}
+.mecanico-conductor-input{background:var(--wood-d);border-color:var(--wood-l);color:var(--paper)}
+
+/* ── Selector de gravedad (chips) ── */
+.mecanico-conductor-gravedad{display:flex;flex-direction:column;gap:8px}
+.mecanico-conductor-chip{background:var(--wood-d);border:1px solid var(--wood-l);color:var(--taupe);padding:11px 14px;border-radius:10px;font-size:13px;font-weight:600;text-align:left;cursor:pointer;transition:all .15s}
+.mecanico-conductor-chip:hover{border-color:var(--taupe)}
+.mecanico-conductor-chip-activo-sage{background:var(--sage-l);border-color:var(--sage);color:var(--sage)}
+.mecanico-conductor-chip-activo-ocre{background:var(--ocre-l);border-color:var(--ocre);color:var(--ocre)}
+.mecanico-conductor-chip-activo-rust{background:#A8423022;border-color:var(--rust);color:var(--rust)}
+
+.mecanico-conductor-btn-enviar{background:var(--rust)}

@@ -1,0 +1,39 @@
+/* ==========================================================
+   LOGISTICARGO SYSTEM
+   CONDUCTOR - NAVEGACIÓN GPS
+
+   Archivo:
+   css/conductor/gps_navegacion.css
+
+   Contiene únicamente los estilos visuales propios de la
+   navegación GPS (paginas/conductor/gps_navegacion.html).
+   ========================================================== */
+
+.gps-conductor-pantalla{padding:0;max-width:none}
+.gps-conductor-pantalla > .conductor-volver{padding:18px 18px 0;max-width:560px;margin:0 auto}
+
+/* ── Mapa ── */
+.gps-conductor-mapa{position:relative;height:240px;overflow:hidden;margin-top:14px}
+.gps-conductor-mapa-imagen{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.8)}
+.gps-conductor-mapa-degradado{position:absolute;inset:0;background:linear-gradient(180deg,#1E110800 40%,#1E1108 100%)}
+.gps-conductor-chip-eta{position:absolute;left:18px;bottom:14px;background:var(--wood-d);border:1px solid var(--wood-l);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;color:var(--paper)}
+.gps-conductor-chip-eta .material-symbols-outlined{color:var(--terra)}
+.gps-conductor-chip-valor{font-size:16px;font-weight:700;margin:0;line-height:1.1}
+.gps-conductor-chip-etiqueta{font-size:11px;color:var(--taupe);margin:0}
+
+/* ── Instrucción de giro actual ── */
+.gps-conductor-instruccion{display:flex;align-items:center;gap:14px;background:var(--terra);padding:16px 18px;margin:0 18px;margin-top:-14px;position:relative;border-radius:14px;max-width:560px;margin-left:auto;margin-right:auto}
+.gps-conductor-instruccion-icono{font-size:28px;color:#fff}
+.gps-conductor-instruccion-texto{font-size:14.5px;font-weight:700;color:#fff;margin:0}
+.gps-conductor-instruccion-detalle{font-size:12px;color:#FFE8D8;margin:0}
+
+/* ── Destino ── */
+.gps-conductor-destino{margin:18px}
+.gps-conductor-pantalla .gps-conductor-destino{max-width:524px;margin-left:auto;margin-right:auto}
+.gps-conductor-destino-fila{display:flex;align-items:flex-start;gap:10px}
+.gps-conductor-pin{color:var(--terra);font-size:22px}
+.gps-conductor-destino-direccion{font-size:14.5px;color:var(--paper);font-weight:700;margin:2px 0 0}
+
+/* ── Acciones ── */
+.gps-conductor-acciones{display:flex;flex-direction:column;gap:10px;padding:0 18px 18px;max-width:560px;margin:0 auto}
+.gps-conductor-btn-llegue{background:var(--sage)}
