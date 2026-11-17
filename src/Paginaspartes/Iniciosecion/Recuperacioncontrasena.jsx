@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import "./Recuperacioncontraseña.css";
+import "./Recuperacioncontrasena.css";
 
 function Recuperacioncontraseña() {
   const [correo, setCorreo] = useState("");
