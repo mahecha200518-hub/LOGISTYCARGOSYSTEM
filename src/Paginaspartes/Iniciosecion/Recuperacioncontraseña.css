@@ -1,0 +1,41 @@
+.recuperacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.recuperacion-formulario {
+  width: 350px;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recuperacion-formulario h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.recuperacion-formulario p {
+  margin-bottom: 20px;
+}
+
+.recuperacion-formulario label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recuperacion-formulario input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.recuperacion-formulario button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
