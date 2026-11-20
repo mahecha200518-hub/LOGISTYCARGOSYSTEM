@@ -1,0 +1,126 @@
+.panel-admin-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+} /*Crea un contenerdor para la pagina */
+
+
+.panel-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/*alinea  los titulos */
+.panel-admin-titulo {
+  font-size: 26px;
+  color: var(--madera);
+}
+
+.panel-admin-subtitulo {
+  font-size: 13px;
+  color: var(--topo);
+  margin-top: 4px;
+}
+
+.panel-admin-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.kpi-admin-card {
+  border-left: 4px solid var(--terracota);
+  padding: 18px 20px;
+}
+
+.kpi-admin-card.verde { border-left-color: var(--verde); }
+.kpi-admin-card.ocre  { border-left-color: var(--ocre); }
+.kpi-admin-card.madera { border-left-color: var(--madera); }
+
+.kpi-admin-titulo {
+  font-size: 11.5px;
+  color: var(--topo);
+  margin-bottom: 6px;
+}
+
+.kpi-admin-valor {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--madera);
+}
+
+.kpi-admin-sub {
+  font-size: 11px;
+  color: var(--topo);
+  margin-top: 4px;
+}
+.panel-admin-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.tabla-admin-wrapper {
+  overflow-x: auto;
+  margin-top: 14px;
+}
+
+.tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tabla-admin th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--crema);
+  color: var(--topo);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tabla-admin td {
+  padding: 12px;
+  border-bottom: 1px solid var(--linea);
+  color: var(--madera);
+}
+
+.tabla-admin tr:hover td {
+  background: rgba(244, 240, 232, 0.45);
+}
+.panel-admin-accesos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn-acceso-admin {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .panel-admin-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel-admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .panel-admin-kpis {
+    grid-template-columns: 1fr;
+  }
+}
