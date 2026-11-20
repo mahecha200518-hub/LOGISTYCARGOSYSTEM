@@ -9,7 +9,8 @@ import Iniciosesion from './Paginaspartes/Iniciosecion/Iniciosesion';
 import Registrocliente from './Paginaspartes/Iniciosecion/Registrocliente';
 import Recuperacioncontrasena from './Paginaspartes/Iniciosecion/Recuperacioncontrasena';
 
-export default function App() {
+export default function App () 
+  {
   const [page, setPage] = useState('login');
   const [role, setRole] = useState('');
   const [usuarioActual, setUsuarioActual] = useState(null);
