@@ -1,0 +1,84 @@
+.veh-contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 26px 24px 48px;
+}
+
+.veh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.veh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.veh-titulo {
+  font-size: 20px;
+}
+
+.veh-subtitulo {
+  font-size: 12.5px;
+  color: var(--topo);
+  margin: 4px 0 16px;
+}
+
+.veh-dato-fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--linea);
+  font-size: 13.5px;
+}
+
+.veh-dato-fila:last-child {
+  border-bottom: none;
+}
+
+.veh-dato-etiqueta {
+  color: var(--topo);
+}
+
+.veh-dato-valor {
+  font-weight: 600;
+  color: var(--madera);
+}
+
+.veh-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+.veh-check-item:hover {
+  background: var(--crema);
+}
+
+.veh-check-item.marcado {
+  background: rgba(74, 124, 89, 0.08);
+  border-color: rgba(74, 124, 89, 0.35);
+}
+
+.veh-btn-full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .veh-grid {
+    grid-template-columns: 1fr;
+  }
+}

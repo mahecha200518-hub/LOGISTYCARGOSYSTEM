@@ -1,0 +1,145 @@
+.hcl-header {
+  background: var(--madera-oscura);
+  color: var(--blanco);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(34, 24, 18, 0.22);
+}
+
+.hcl-superior {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hcl-usuario-bloque {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hcl-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--terracota);
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hcl-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blanco);
+}
+
+.hcl-subtitulo {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 1px;
+}
+
+.hcl-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hcl-estado-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(217, 155, 67, 0.16);
+  border: 1px solid rgba(217, 155, 67, 0.45);
+  color: var(--ocre);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hcl-punto-activo {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ocre);
+}
+
+.hcl-btn-salir {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--blanco);
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.hcl-btn-salir:hover {
+  background: rgba(168, 66, 48, 0.35);
+  border-color: var(--rojo);
+}
+
+/* Barra de pestañas inferiores */
+.hcl-nav-barra {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.hcl-nav-contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.hcl-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.hcl-tab:hover {
+  color: var(--blanco);
+}
+
+.hcl-tab.activa {
+  color: var(--ocre);
+  border-bottom-color: var(--ocre);
+}
+
+@media (max-width: 768px) {
+  .hcl-superior,
+  .hcl-nav-contenedor {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

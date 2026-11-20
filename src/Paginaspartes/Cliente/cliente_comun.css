@@ -1,0 +1,83 @@
+.cli-contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 26px 24px 52px;
+}
+
+.cli-subvista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cli-subvista-izq {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cli-btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  color: var(--madera);
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.cli-btn-volver:hover {
+  background: var(--crema);
+  border-color: var(--terracota);
+}
+
+.cli-codigo-servicio {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--topo);
+  text-transform: uppercase;
+}
+
+.cli-titulo-vista {
+  font-size: 21px;
+  color: var(--madera-oscura);
+  margin-top: 2px;
+}
+
+.cli-subtitulo-card {
+  font-size: 16px;
+  color: var(--madera-oscura);
+  margin-bottom: 12px;
+}
+
+.cli-campo {
+  margin-bottom: 14px;
+}
+
+.cli-btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.cli-caja-info {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--madera);
+}
+
+@media (max-width: 768px) {
+  .cli-contenedor {
+    padding: 18px 16px 40px;
+  }
+}

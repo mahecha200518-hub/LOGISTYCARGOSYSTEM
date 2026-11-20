@@ -1,27 +1,27 @@
-import './NavbarAdmin.css';//importamos el css
+import './NavbarAdmin.css';  //importamos el css par que funcione conforme el diseño
 
+// esto lo extraemos del App.jsx
 export default function NavbarAdmin({ page, setPage, usuarioActual, cerrarSesion }) {
-  // 1. Extraemos las iniciales del nombre del administrador
-  const iniciales = (usuarioActual?.nombre || 'AD')
+  const iniciales = (usuarioActual?.nombre || 'AD') //Con esta cadena transformamos el nombre el usuario a uno mas simple 
     .split(' ')
-    .map((palabra) => palabra[0])
+    .map((p) => p[0])
     .join('')
     .slice(0, 2)
-    .toUpperCase();
+    .toUpperCase(); 
 
-  // 2. Definimos las opciones del menú en un arreglo para no repetir código HTML
   const menu = [
     { id: 'dash_admin', icono: 'home', texto: 'Dashboard' },
     { id: 'ad_servicios', icono: 'receipt_long', texto: 'Servicios' },
+    { id: 'ad_asignaciones', icono: 'assignment_ind', texto: 'Asignaciones' },
     { id: 'ad_vehiculos', icono: 'local_shipping', texto: 'Vehículos' },
     { id: 'ad_conductores', icono: 'badge', texto: 'Conductores' },
     { id: 'ad_clientes', icono: 'group', texto: 'Clientes' }
-  ];
+  ];// arreglo del menu y mejora de la eficiencia guardando los daros de navegacion en un solo lugar 
 
-        // Izquierda Logo y nombre del panel
+
+  //renderizado 
   return (
     <header className="nav-admin">
-
       <div className="nav-admin-marca">
         <img src="/imagenes/LOGO.jpg" alt="Logo" />
         <div>
@@ -30,15 +30,14 @@ export default function NavbarAdmin({ page, setPage, usuarioActual, cerrarSesion
         </div>
       </div>
 
-     //genracion de enlaces dinamoicos 
       <nav className="nav-admin-links">
-        {menu.map((item) => (
+        {menu.map((item) => (// recorre cada objeto y fabrica un enlace por cada uno
           <a
-            key={item.id}
+            key={item.id} // permite a react identificar cada enlace 
             href={`#${item.id}`}
             onClick={(e) => {
               e.preventDefault();
-              setPage(item.id);
+              setPage(item.id);// frena la carga nativa del navegador y le avisa App.jsx que subseccion abrir
             }}
             className={`nav-admin-link ${page === item.id ? 'activo' : ''}`}
           >
@@ -48,7 +47,7 @@ export default function NavbarAdmin({ page, setPage, usuarioActual, cerrarSesion
         ))}
       </nav>
 
-      //boton de usuario y cierre de sesion
+            
       <div className="nav-admin-usuario">
         <div className="nav-admin-avatar">{iniciales}</div>
         <div>
@@ -61,4 +60,5 @@ export default function NavbarAdmin({ page, setPage, usuarioActual, cerrarSesion
       </div>
     </header>
   );
-}
+}//perfil y cierre de sesion 
+//<div className="nav-admin-avatar">{iniciales}</div> muestra el nombre y lo conecta con el <button onClick={cerrarSesion} className="nav-admin-salir" title="Cerrar sesión">

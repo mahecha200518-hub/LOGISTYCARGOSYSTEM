@@ -1,0 +1,128 @@
+.hdr-cond {
+  background: var(--madera-oscura);
+  color: var(--blanco);
+  padding: 16px 32px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.hdr-cond-superior {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 14px;
+}
+
+.hdr-cond-perfil {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hdr-cond-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ocre);
+  color: var(--madera-oscura);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.hdr-cond-nombre {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hdr-cond-sub {
+  font-size: 12px;
+  color: var(--topo-claro);
+  margin-top: 2px;
+}
+
+.hdr-cond-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hdr-cond-turno {
+  background: rgba(143, 192, 124, 0.16);
+  border: 1px solid rgba(143, 192, 124, 0.4);
+  color: #9EE087;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hdr-cond-turno.pausa {
+  background: rgba(217, 155, 67, 0.16);
+  border-color: rgba(217, 155, 67, 0.4);
+  color: var(--ocre);
+}
+
+.hdr-cond-salir {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--blanco);
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.hdr-cond-salir:hover {
+  background: rgba(168, 66, 48, 0.4);
+  border-color: var(--rojo);
+}
+
+.hdr-cond-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hdr-cond-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--topo-claro);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.hdr-cond-tab:hover {
+  color: var(--blanco);
+}
+
+.hdr-cond-tab.activo {
+  color: var(--ocre);
+  border-bottom-color: var(--ocre);
+}
+
+.hdr-cond-tab .material-symbols-outlined {
+  font-size: 18px;
+}

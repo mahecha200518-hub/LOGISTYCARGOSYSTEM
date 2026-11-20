@@ -1,0 +1,193 @@
+.sop-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.sop-columna-principal,
+.sop-columna-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sop-tarjeta-form {
+  border-top: 4px solid var(--terracota);
+}
+
+.sop-tarjeta-tickets {
+  border-top: 4px solid var(--ocre);
+}
+
+.sop-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sop-textarea {
+  min-height: 92px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Preguntas frecuentes desplegables */
+.sop-faq-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sop-faq-item {
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: var(--crema);
+  overflow: hidden;
+}
+
+.sop-faq-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--madera-oscura);
+  cursor: pointer;
+}
+
+.sop-faq-btn:hover {
+  color: var(--terracota);
+}
+
+.sop-faq-respuesta {
+  padding: 0 14px 13px;
+  font-size: 12.5px;
+  color: var(--madera);
+  line-height: 1.5;
+  border-top: 1px solid var(--linea);
+  padding-top: 10px;
+  background: var(--blanco);
+}
+
+/* Columna derecha: Historial de tickets y canales directos */
+.sop-tickets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.sop-titulo-sin-margen {
+  font-size: 16px;
+  color: var(--madera-oscura);
+}
+
+.sop-lista-tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sop-ticket-card {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--ocre);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.sop-ticket-card.resuelto {
+  border-left-color: var(--verde);
+}
+
+.sop-ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sop-ticket-codigo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--topo);
+}
+
+.sop-ticket-asunto {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+  margin-bottom: 5px;
+}
+
+.sop-ticket-desc {
+  font-size: 12.5px;
+  color: var(--madera);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.sop-ticket-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--topo);
+}
+
+.sop-canales-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sop-canal-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 11px 13px;
+}
+
+.sop-canal-icono {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(193, 98, 45, 0.12);
+  color: var(--terracota);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sop-canal-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.sop-canal-dato {
+  font-size: 12px;
+  color: var(--topo);
+  margin-top: 1px;
+}
+
+@media (max-width: 840px) {
+  .sop-grid,
+  .sop-fila-doble {
+    grid-template-columns: 1fr;
+  }
+}

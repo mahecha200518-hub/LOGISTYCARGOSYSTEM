@@ -1,0 +1,210 @@
+.seg-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.seg-tarjeta-mapa {
+  border-top: 4px solid var(--terracota);
+}
+
+.seg-metricas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.seg-metrica-caja {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 11px 12px;
+  text-align: center;
+}
+
+.seg-metrica-valor {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.seg-metrica-label {
+  font-size: 11px;
+  color: var(--topo);
+  margin-top: 2px;
+}
+
+.seg-mapa-contenedor {
+  position: relative;
+  height: 340px;
+  border-radius: 12px;
+  border: 1px solid var(--linea);
+  overflow: hidden;
+  margin-bottom: 16px;
+  z-index: 1;
+}
+
+.seg-leaflet-mapa {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.seg-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 12px;
+  border: 3px solid var(--blanco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.seg-pin-origen {
+  background: var(--verde);
+}
+
+.seg-pin-destino {
+  background: var(--terracota);
+}
+
+.seg-pin-camion {
+  background: var(--madera-oscura);
+  border-color: var(--ocre);
+  color: var(--ocre);
+}
+
+.seg-acciones-mapa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.seg-columna-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seg-conductor-ficha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.seg-conductor-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--madera-oscura);
+  color: var(--ocre);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seg-conductor-nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.seg-conductor-vehiculo {
+  font-size: 12px;
+  color: var(--topo);
+  margin-top: 2px;
+}
+
+.seg-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seg-hito {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--linea);
+  background: var(--crema);
+}
+
+.seg-hito.completado {
+  background: rgba(74, 124, 89, 0.09);
+  border-color: rgba(74, 124, 89, 0.4);
+}
+
+.seg-hito.actual {
+  background: rgba(193, 98, 45, 0.11);
+  border-color: var(--terracota);
+}
+
+.seg-hito-icono {
+  color: var(--topo);
+  font-size: 20px;
+  margin-top: 1px;
+}
+
+.seg-hito.completado .seg-hito-icono {
+  color: var(--verde);
+}
+
+.seg-hito.actual .seg-hito-icono {
+  color: var(--terracota);
+}
+
+.seg-hito-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.seg-hito-desc {
+  font-size: 11.5px;
+  color: var(--topo);
+  margin-top: 2px;
+}
+
+.seg-inventario-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  padding: 10px 13px;
+  font-size: 12.5px;
+  color: var(--madera);
+}
+
+.seg-alerta-ruta {
+  background: rgba(217, 155, 67, 0.14);
+  border-left: 3px solid var(--ocre);
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 12.5px;
+  color: var(--madera-oscura);
+  line-height: 1.45;
+}
+
+@media (max-width: 840px) {
+  .seg-grid,
+  .seg-acciones-mapa,
+  .seg-metricas {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,157 @@
+.ss-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.ss-tarjeta-form {
+  border-top: 4px solid var(--terracota);
+}
+
+.ss-tarjeta-resumen {
+  border-top: 4px solid var(--madera);
+  position: sticky;
+  top: 118px;
+}
+
+.ss-seccion-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--terracota);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 18px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.ss-seccion-titulo:first-of-type {
+  margin-top: 4px;
+}
+
+.ss-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 12px;
+}
+
+.ss-fila-mitad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ss-inventario-agregar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ss-chips-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.ss-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  color: var(--madera-oscura);
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ss-chip-quitar {
+  background: transparent;
+  border: none;
+  color: var(--rojo);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ss-textarea {
+  min-height: 76px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.ss-resumen-bloque {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.ss-resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.ss-resumen-fila:last-child {
+  border-bottom: none;
+}
+
+.ss-resumen-label {
+  color: var(--topo);
+}
+
+.ss-resumen-valor {
+  font-weight: 600;
+  color: var(--madera-oscura);
+  text-align: right;
+}
+
+.ss-precio-destacado {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--terracota);
+  margin-top: 4px;
+}
+
+.ss-garantias {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 12.5px;
+  color: var(--madera);
+}
+
+.ss-garantia-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ss-garantia-icono {
+  color: var(--verde);
+  font-size: 18px;
+}
+
+@media (max-width: 840px) {
+  .ss-grid,
+  .ss-fila-doble,
+  .ss-fila-mitad {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-tarjeta-resumen {
+    position: static;
+  }
+}

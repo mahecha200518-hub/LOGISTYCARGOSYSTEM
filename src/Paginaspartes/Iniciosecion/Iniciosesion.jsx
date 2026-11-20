@@ -29,15 +29,15 @@ export default function Iniciosesion({ role, setRole, setPage, doLogin }) {
 
         <div className="login-metricas">
           <div className="login-metrica-caja">
-            <p className="login-metrica-valor">+450</p>
+            <p className="login-metrica-valor">xxx</p>
             <p className="login-metrica-texto">Mudanzas completadas</p>
           </div>
           <div className="login-metrica-caja">
-            <p className="login-metrica-valor">4.9 ★</p>
+            <p className="login-metrica-valor">xxx ★</p>
             <p className="login-metrica-texto">Calificación promedio</p>
           </div>
           <div className="login-metrica-caja">
-            <p className="login-metrica-valor">16</p>
+            <p className="login-metrica-valor">xx</p>
             <p className="login-metrica-texto">Camiones en flota</p>
           </div>
         </div>

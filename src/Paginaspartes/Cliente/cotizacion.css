@@ -1,0 +1,205 @@
+.cot-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.cot-tarjeta-form {
+  border-top: 4px solid var(--ocre);
+}
+
+.cot-tarjeta-resumen {
+  border-top: 4px solid var(--verde);
+  position: sticky;
+  top: 118px;
+}
+
+.cot-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Selector visual de tamaño de mudanza */
+.cot-tamanos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cot-tamano-btn {
+  padding: 12px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--linea);
+  background: var(--crema);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.cot-tamano-btn:hover {
+  border-color: var(--terracota);
+}
+
+.cot-tamano-btn.activo {
+  background: rgba(193, 98, 45, 0.11);
+  border-color: var(--terracota);
+}
+
+.cot-tamano-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.cot-tamano-vehiculo {
+  font-size: 11.5px;
+  color: var(--terracota);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.cot-tamano-desc {
+  font-size: 11px;
+  color: var(--topo);
+  margin-top: 3px;
+}
+
+/* Lista de servicios adicionales */
+.cot-extras-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.cot-extra-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  background: var(--blanco);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.cot-extra-item:hover {
+  background: var(--crema);
+}
+
+.cot-extra-item.marcado {
+  background: rgba(74, 124, 89, 0.08);
+  border-color: rgba(74, 124, 89, 0.45);
+}
+
+.cot-extra-izq {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cot-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--verde);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cot-extra-nombre {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--madera-oscura);
+}
+
+.cot-extra-detalle {
+  font-size: 11.5px;
+  color: var(--topo);
+}
+
+.cot-extra-precio {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--verde);
+  white-space: nowrap;
+}
+
+/* Columna derecha: Desglose y total estimado */
+.cot-desglose-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--linea);
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.cot-desglose-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cot-desglose-etiqueta {
+  color: var(--topo);
+}
+
+.cot-desglose-valor {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--madera-oscura);
+}
+
+.cot-total-bloque {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cot-total-etiqueta {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--topo);
+  text-transform: uppercase;
+}
+
+.cot-total-monto {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--terracota);
+  margin-top: 4px;
+}
+
+.cot-total-nota {
+  font-size: 11.5px;
+  color: var(--topo);
+  margin-top: 4px;
+}
+
+.cot-acciones-resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 840px) {
+  .cot-grid,
+  .cot-fila-doble,
+  .cot-tamanos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cot-tarjeta-resumen {
+    position: static;
+  }
+}

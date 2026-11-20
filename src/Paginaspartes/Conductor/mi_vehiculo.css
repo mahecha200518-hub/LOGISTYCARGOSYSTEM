@@ -1,0 +1,119 @@
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.mv-tarjeta-ficha {
+  border-top: 4px solid var(--ocre);
+}
+
+.mv-tarjeta-inspeccion {
+  border-top: 4px solid var(--verde);
+}
+
+.mv-ficha-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mv-titulo-card {
+  font-size: 17px;
+  color: var(--madera-oscura);
+}
+
+.mv-subtitulo {
+  font-size: 12.5px;
+  color: var(--topo);
+  margin: 4px 0 16px;
+}
+
+/* Filas de datos técnicos */
+.mv-dato-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--linea);
+  font-size: 13.5px;
+}
+
+.mv-dato-fila:last-of-type {
+  border-bottom: none;
+  margin-bottom: 16px;
+}
+
+.mv-dato-etiqueta {
+  color: var(--topo);
+}
+
+.mv-dato-valor {
+  font-weight: 600;
+  color: var(--madera-oscura);
+  text-align: right;
+}
+
+/* Acceso rápido a falla mecánica */
+.mv-alerta-mecanica {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--madera);
+}
+
+/* Lista de inspección preoperacional */
+.mv-lista-chequeo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mv-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  background: var(--blanco);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--madera-oscura);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.mv-check-item:hover {
+  background: var(--crema);
+}
+
+.mv-check-item.marcado {
+  background: rgba(74, 124, 89, 0.08);
+  border-color: rgba(74, 124, 89, 0.4);
+}
+
+.mv-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--verde);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 780px) {
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,148 @@
+.pa-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.pa-tarjeta-principal {
+  border-top: 4px solid var(--terracota);
+}
+
+.pa-encabezado-parada {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* Línea de tiempo vertical de etapas */
+.pa-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 22px;
+}
+
+.pa-paso {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 15px;
+  border-radius: 10px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  transition: all 0.15s ease;
+}
+
+.pa-paso.completado {
+  background: rgba(74, 124, 89, 0.09);
+  border-color: rgba(74, 124, 89, 0.4);
+}
+
+.pa-paso.activo {
+  background: rgba(193, 98, 45, 0.12);
+  border-color: var(--terracota);
+  box-shadow: 0 4px 12px rgba(193, 98, 45, 0.08);
+}
+
+.pa-paso-numero {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--blanco);
+  border: 2px solid var(--linea);
+  color: var(--topo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pa-paso.completado .pa-paso-numero {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: var(--blanco);
+}
+
+.pa-paso.activo .pa-paso-numero {
+  background: var(--terracota);
+  border-color: var(--terracota);
+  color: var(--blanco);
+}
+
+.pa-paso-info {
+  flex: 1;
+}
+
+.pa-paso-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--madera-oscura);
+}
+
+.pa-paso-desc {
+  font-size: 12px;
+  color: var(--topo);
+  margin-top: 2px;
+}
+
+/* Columna lateral: Contacto y acta de entrega */
+.pa-columna-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pa-dato-bloque {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.pa-dato-bloque:last-of-type {
+  border-bottom: none;
+  margin-bottom: 12px;
+}
+
+.pa-dato-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--topo);
+}
+
+.pa-dato-texto {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--madera-oscura);
+  margin-top: 3px;
+}
+
+.pa-botones-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.pa-confirmacion-exito {
+  background: rgba(74, 124, 89, 0.12);
+  border: 1px solid var(--verde);
+  color: var(--verde);
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 820px) {
+  .pa-grid {
+    grid-template-columns: 1fr;
+  }
+}
