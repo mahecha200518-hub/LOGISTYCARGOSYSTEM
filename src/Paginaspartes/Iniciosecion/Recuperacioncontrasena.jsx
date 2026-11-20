@@ -1,150 +1,141 @@
-<<<<<<< HEAD
+import { useState } from 'react';
 import './Recuperacioncontrasena.css';
 
-export default function Recuperacioncontraseña({ setPage, mostrarToast }) {
-  const manejarRecuperacion = (e) => {
+export default function Recuperacioncontrasena({ setPage, mostrarToast }) {
+  const [correo, setCorreo] = useState('');
+  const [codigo, setCodigo] = useState('');
+  const [codigoGenerado, setCodigoGenerado] = useState('');
+  const [nuevaContrasena, setNuevaContrasena] = useState('');
+  const [paso, setPaso] = useState(1);
+
+  const solicitarCodigo = (e) => {
     e.preventDefault();
-    mostrarToast('Código enviado a tu correo electrónico');
+    const nuevoCodigo = Math.floor(100000 + Math.random() * 900000).toString();
+    setCodigoGenerado(nuevoCodigo);
+    setCodigo('');
+    setPaso(2);
+    mostrarToast?.(`Código enviado a ${correo}`);
+  };
+
+  const verificarCodigo = (e) => {
+    e.preventDefault();
+    if (codigo.trim() === codigoGenerado) {
+      setPaso(3);
+      mostrarToast?.('Código verificado correctamente');
+    } else {
+      mostrarToast?.('El código ingresado es incorrecto');
+    }
+  };
+
+  const cambiarContrasena = (e) => {
+    e.preventDefault();
+    mostrarToast?.('Contraseña recuperada correctamente');
+    setPaso(1);
+    setCorreo('');
+    setCodigo('');
+    setCodigoGenerado('');
+    setNuevaContrasena('');
+    setPage?.('login');
   };
 
   return (
     <div className="recuperar-contenedor">
-      <form onSubmit={manejarRecuperacion} className="card recuperar-card">
+      <div className="card recuperar-card">
         <div className="recuperar-icono">
           <span className="material-symbols-outlined">lock_reset</span>
         </div>
 
-        <h2 className="recuperar-titulo">Recuperar contraseña</h2>
-        <p className="recuperar-texto">Ingresa tu correo y te enviaremos un código.</p>
-
-        <div className="recuperar-campo">
-          <label className="lbl">Correo electrónico</label>
-          <input className="inp" type="email" placeholder="usuario@logisticargo.com" required />
-        </div>
-
-        <button type="submit" className="btn btn-primario recuperar-btn">
-          Enviar código
-        </button>
-
-        <a
-          href="#login"
-          onClick={(e) => { e.preventDefault(); setPage('login'); }}
-          className="recuperar-volver"
-        >
-          ← Volver al inicio de sesión
-        </a>
-      </form>
-    </div>
-  );
-}
-=======
-
-import { useState } from "react";
-import "./Recuperacioncontrasena.css";
-
-function Recuperacioncontraseña() {
-  const [correo, setCorreo] = useState("");
-  const [codigo, setCodigo] = useState("");
-  const [codigoGenerado, setCodigoGenerado] = useState("");
-  const [nuevaContrasena, setNuevaContrasena] = useState("");
-  const [paso, setPaso] = useState(1);
-
-  function solicitarCodigo(e) {
-    e.preventDefault();
-
-    const nuevoCodigo = Math.floor(100000 + Math.random() * 900000);
-
-    setCodigoGenerado(nuevoCodigo.toString());
-    setPaso(2);
-  }
-
-  function verificarCodigo(e) {
-    e.preventDefault();
-
-    if (codigo === codigoGenerado) {
-      setPaso(3);
-    } else {
-      alert("El código ingresado es incorrecto.");
-    }
-  }
-
-  function cambiarContrasena(e) {
-    e.preventDefault();
-
-    alert("Contraseña recuperada correctamente.");
-    setPaso(1);
-    setCorreo("");
-    setCodigo("");
-    setCodigoGenerado("");
-    setNuevaContrasena("");
-  }
-
-  return (
-    <div className="recuperacion">
-      <div className="recuperacion-formulario">
-
         {paso === 1 && (
           <form onSubmit={solicitarCodigo}>
-            <h2>Recuperar contraseña</h2>
-            <p>Ingresa tu correo electrónico para continuar.</p>
+            <h2 className="recuperar-titulo">Recuperar contraseña</h2>
+            <p className="recuperar-texto">
+              Ingresa tu correo y te enviaremos un código.
+            </p>
 
-            <label>Correo electrónico</label>
-            <input
-              type="email"
-              placeholder="Ingresa tu correo"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
-              required
-            />
+            <div className="recuperar-campo">
+              <label className="lbl">Correo electrónico</label>
+              <input
+                className="inp"
+                type="email"
+                placeholder="usuario@logisticargo.com"
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
+                required
+              />
+            </div>
 
-            <button type="submit">Enviar código</button>
+            <button type="submit" className="btn btn-primario recuperar-btn">
+              Enviar código
+            </button>
           </form>
         )}
 
         {paso === 2 && (
           <form onSubmit={verificarCodigo}>
-            <h2>Verificar código</h2>
-            <p>Ingresa el código de recuperación.</p>
+            <h2 className="recuperar-titulo">Verificar código</h2>
+            <p className="recuperar-texto">
+              Ingresa el código de 6 dígitos enviado a <strong>{correo}</strong>.
+            </p>
+            <p className="recuperar-texto">
+              Código de demostración: <strong>{codigoGenerado}</strong>
+            </p>
 
-            <p> Código de demostración: <strong>{codigoGenerado}</strong></p>
+            <div className="recuperar-campo">
+              <label className="lbl">Código de recuperación</label>
+              <input
+                className="inp"
+                type="text"
+                maxLength={6}
+                placeholder="Ingresa los 6 dígitos"
+                value={codigo}
+                onChange={(e) => setCodigo(e.target.value)}
+                required
+              />
+            </div>
 
-            <label>Código de recuperación</label>
-            <input
-              type="text"
-              maxLength="6"
-              placeholder="Ingresa los 6 dígitos"
-              value={codigo}
-              onChange={(e) => setCodigo(e.target.value)}
-              required
-            />
-
-            <button type="submit">Verificar código</button>
+            <button type="submit" className="btn btn-primario recuperar-btn">
+              Verificar código
+            </button>
           </form>
         )}
 
         {paso === 3 && (
           <form onSubmit={cambiarContrasena}>
-            <h2>Nueva contraseña</h2>
-            <p>Ingresa tu nueva contraseña.</p>
+            <h2 className="recuperar-titulo">Nueva contraseña</h2>
+            <p className="recuperar-texto">
+              Ingresa tu nueva contraseña para completar la recuperación.
+            </p>
 
-            <label>Nueva contraseña</label>
-            <input
-              type="password"
-              placeholder="Nueva contraseña"
-              value={nuevaContrasena}
-              onChange={(e) => setNuevaContrasena(e.target.value)}
-              required
-              minLength="6"
-            />
+            <div className="recuperar-campo">
+              <label className="lbl">Nueva contraseña</label>
+              <input
+                className="inp"
+                type="password"
+                placeholder="Nueva contraseña"
+                value={nuevaContrasena}
+                onChange={(e) => setNuevaContrasena(e.target.value)}
+                minLength={6}
+                required
+              />
+            </div>
 
-            <button type="submit">Cambiar contraseña</button>
+            <button type="submit" className="btn btn-primario recuperar-btn">
+              Cambiar contraseña
+            </button>
           </form>
         )}
 
+        <a
+          href="#login"
+          onClick={(e) => {
+            e.preventDefault();
+            setPage?.('login');
+          }}
+          className="recuperar-volver"
+        >
+          ← Volver al inicio de sesión
+        </a>
       </div>
     </div>
   );
 }
-
-export default Recuperacioncontraseña;
->>>>>>> 9afbeb47c7b78cb95a82fd159e54be9ad587a6d0

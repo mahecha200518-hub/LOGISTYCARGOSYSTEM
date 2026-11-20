@@ -1,0 +1,119 @@
+.nav-admin {
+  background: var(--blanco); 
+  border-bottom: 1px solid var(--linea);
+  padding: 0 28px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-admin-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+  
+.nav-admin-marca img {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.nav-admin-titulo {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--madera);
+}
+
+.nav-admin-sub {
+  font-size: 10.5px;
+  color: var(--topo);
+}
+.nav-admin-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.nav-admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--topo);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-admin-link:hover {
+  color: var(--madera);
+}
+
+.nav-admin-link.activo {
+  color: var(--terracota);
+  font-weight: 600;
+  border-bottom-color: var(--terracota);
+}
+
+.nav-admin-link .material-symbols-outlined {
+  font-size: 18px;
+}
+.nav-admin-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-admin-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--madera);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav-admin-nombre {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--madera);
+}
+
+.nav-admin-rol {
+  font-size: 11px;
+  color: var(--topo);
+}
+
+.nav-admin-salir {
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  color: var(--madera-media);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-admin-salir:hover {
+  background: rgba(168, 66, 48, 0.12);
+  color: var(--rojo);
+}
